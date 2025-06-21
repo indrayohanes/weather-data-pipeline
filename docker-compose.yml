@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: pg_weather
+    environment:
+      POSTGRES_DB: weatherdb
+      POSTGRES_USER: weatheruser
+      POSTGRES_PASSWORD: weatherpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  etl:
+    build: ./etl
+    container_name: etl_script
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+volumes:
+  pgdata:
