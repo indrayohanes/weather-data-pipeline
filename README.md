@@ -40,7 +40,8 @@ These are selectable from a dropdown menu in the Streamlit dashboard.
 
 📸 Screenshots
 🔽 City Selection
-
+![img3](img/img3.png)
 📈 Weather Trend
-
-📊 Hourly Average
+![img1](img/img1.png)
+📋 Custom Filter
+![img2](img/img2.png)
